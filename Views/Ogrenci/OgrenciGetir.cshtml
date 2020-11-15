@@ -1,0 +1,35 @@
+﻿@model MvcOkulYS.Models.EntityFramework.TBL_OGRENCILER
+@{
+    ViewBag.Title = "OgrenciGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h3>Öğrenci Bilgileri Güncelle</h3>
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label>Adı</label>
+        @Html.TextBoxFor(m => m.OGRAD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Soyadı</label>
+        @Html.TextBoxFor(m => m.OGRSOYAD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Fotoğraf</label>
+        @Html.TextBoxFor(m => m.OGRFOTO, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Kulübü</label>
+        @Html.DropDownListFor(m => m.TBL_KULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })        
+    </div>
+    <div class="form-group">
+        <label>Cinsiyeti</label>
+        @Html.TextBoxFor(m => m.OGRCINSIYET, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.OGRID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}

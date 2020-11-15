@@ -1,0 +1,21 @@
+﻿@model MvcOkulYS.Models.EntityFramework.TBL_DERSLER
+@{
+    ViewBag.Title = "DersGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Default", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Ders Adı</label>
+        @Html.TextBoxFor(m=>m.DERSAD,new { @class ="form-control"})
+    </div>
+    @Html.HiddenFor(m=>m.DERSID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+
+
+    </div>
+
+
+}

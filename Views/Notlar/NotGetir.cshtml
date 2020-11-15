@@ -1,0 +1,46 @@
+﻿@model MvcOkulYS.Models.EntityFramework.TBL_NOTLAR
+@{
+    ViewBag.Title = "NotGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Öğrenci Notu Güncelle</h3>
+@using (Html.BeginForm("NotGetir", "Notlar", FormMethod.Post))
+{
+<div class="form-group">
+    <label>Öğrenci ID</label>
+    @Html.TextBoxFor(m => m.OGRID, new { @class = "form-control" })
+</div>
+    <div class="form-group">
+        <label>Sınav 1</label>
+        @Html.TextBoxFor(m => m.SINAV1, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Sınav 2</label>
+        @Html.TextBoxFor(m => m.SINAV2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Sınav 3</label>
+        @Html.TextBoxFor(m => m.SINAV3, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Proje</label>
+        @Html.TextBoxFor(m => m.PROJE, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Ortalama</label>
+        @Html.TextBoxFor(m => m.ORTALAMA, new { @Value = @ViewBag.ort, @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Durum</label>
+        @Html.TextBoxFor(m => m.DURUM, new { @Value = @ViewBag.drm, @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.NOTID)
+    <div style="margin-top:15px">
+        <button type="submit" name="islem" value="HESAPLA" id="btnHesapla" class="btn btn-primary">
+            Hesapla
+        </button>
+        <button type="submit" name="islem" value="NOTGUNCELLE" class="btn btn-info">
+            Not Güncelle
+        </button>
+    </div>
+}

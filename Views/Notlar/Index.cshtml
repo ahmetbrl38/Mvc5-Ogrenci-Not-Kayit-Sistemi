@@ -1,0 +1,44 @@
+﻿@using MvcOkulYS.Models.EntityFramework;
+@model List<TBL_NOTLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Notlar</h2>
+<table class="table table-hover">
+    <tr>
+        <th>Not Id</th>
+        <th>Öğrenci</th>
+        <th>Ders</th>
+        <th>Sınav 1</th>
+        <th>Sınav 2</th>
+        <th>Sınav 3</th>
+        <th>Proje</th>
+        <th>Ortalama</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+
+        @foreach (var snv in Model)
+        {
+        <tr>
+            <td>@snv.NOTID</td>
+            <td>@snv.TBL_OGRENCILER.OGRAD @snv.TBL_OGRENCILER.OGRSOYAD</td>
+            <td>@snv.TBL_DERSLER.DERSAD</td>
+            <td>@snv.SINAV1</td>
+            <td>@snv.SINAV2</td>
+            <td>@snv.SINAV3</td>
+            <td>@snv.PROJE</td>
+            <td>@snv.ORTALAMA</td>
+            <td>@snv.DURUM</td>
+            <td><a href="/Notlar/NotGetir/@snv.NOTID" class="btn btn-warning">✎</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Notlar/YeniSinav" class="btn btn-primary">Yeni Sınav Girişi</a>
+
+

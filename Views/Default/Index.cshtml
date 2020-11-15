@@ -1,0 +1,33 @@
+﻿@using MvcOkulYS.Models.EntityFramework;
+@model List<TBL_DERSLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ders Listesi</h2>
+
+<table class=" table table-hover">
+    <tr>
+        <th>Ders ID</th>
+        <th>Ders Adı</th>
+        <th>İşlemler</th>
+    </tr>
+
+    <tbody>
+        @foreach (var drs in Model)
+        {
+            <tr>
+                <td>@drs.DERSID</td>
+                <td>@drs.DERSAD</td>
+                <td>
+                    <a href="/Default/Sil/@drs.DERSID" class="btn btn-danger">Sil</a>
+                    <a href="/Default/DersGetir/@drs.DERSID" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Default/YeniDers" class="btn btn-primary">Yeni Ders Kaydı</a>
+

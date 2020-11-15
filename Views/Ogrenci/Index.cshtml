@@ -1,0 +1,37 @@
+﻿@using MvcOkulYS.Models.EntityFramework;
+@model List<TBL_OGRENCILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Öğrenci Listesi</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Öğrenci</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Cinsiyet</th>
+        <th>Kulüp</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>@ogr.OGRID</td>
+                <td>@ogr.OGRAD</td>
+                <td>@ogr.OGRSOYAD</td>
+                <td>@ogr.OGRCINSIYET</td>
+                <td>@ogr.TBL_KULUPLER.KULUPAD</td>
+                <td>
+                    <a href="/Ogrenci/Sil/@ogr.OGRID" id="btnOgrSil" class="btn btn-danger">Sil</a>
+                    <a href="/Ogrenci/OgrenciGetir/@ogr.OGRID" class="btn btn-success">Güncelle</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Ogrenci/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Kaydı</a>

@@ -1,0 +1,68 @@
+﻿@model MvcOkulYS.Models.EntityFramework.TBL_OGRENCILER
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <form method="post" class="form-group">
+        <h2>Öğrenci Bilgileri</h2>
+        <div>
+            <label>Adı</label>
+            <input type="text" class="form-control" name="OGRAD" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Soyadı</label>
+            <input type="text" class="form-control" name="OGRSOYAD" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Fotoğraf</label>
+            <input type="text" class="form-control" name="OGRFOTO" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Cinsiyet</label>
+            <input type="text" class="form-control" name="OGRCINSIYET" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Kulübü</label>
+            @Html.DropDownListFor(m => m.TBL_KULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:10px">
+            <button class="btn btn-primary" id="btnOgrenciEkle">Öğrenci Ekle</button>
+        </div>       
+    </form>
+</div>
+@*<div style="margin-top:10px">
+            @Html.DropDownList("Şehirler",
+    new[]
+    {
+               new SelectListItem(){Value="1",Text ="Ankara"},
+               new SelectListItem(){Value="2",Text ="Erzurum"},
+               new SelectListItem(){Value="3",Text ="Kayseri"},
+               new SelectListItem(){Value="4",Text ="İstanbul"}
+            },"Şehir seçiniz...", new {@class="form-control"})
+
+        </div>*@
+@*<div style="margin-top:10px">
+        <label>Film Seçin</label>
+        <select id="MovieType" name="MovieType">
+
+                <option value=""></option>
+
+                <option value="0">Action</option>
+
+                <option value="1">Drama</option>
+
+                <option selected="selected" value="2">Comedy</option>
+
+                <option value="3">Science Fiction</option>
+
+            </select>
+
+
+    </div>
+    <div style="margin-top:10px">
+
+        @Html.DropDownList("DersAd",null,"Ders Seçiniz",new { @class = "form-control" })
+
+    </div>*@
+

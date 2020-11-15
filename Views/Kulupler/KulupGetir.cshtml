@@ -1,0 +1,23 @@
+﻿@model MvcOkulYS.Models.EntityFramework.TBL_KULUPLER
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
+{
+
+<div class="form-group">
+    <label>Kulüp Adı</label>
+    @Html.TextBoxFor(m => m.KULUPAD,new { @class="form-control"})
+</div>
+<div class="form-group">
+    <label>Kontenjan</label>
+    @Html.TextBoxFor(m => m.KULUPKONTENJAN, new { @class = "form-control" })
+</div>
+@Html.HiddenFor(m=>m.KULUPID)
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+
+}

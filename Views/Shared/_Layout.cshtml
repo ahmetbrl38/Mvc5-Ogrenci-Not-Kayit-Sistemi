@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <title>Öğrenci Kayıt Sistemi</title>
+
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link href="~/Dosyalar1/StyleSheet2.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sümer İlköğretim Okulu</h3>
+                <strong>BS</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li>
+                    <a href="/Ogrenci/Index">
+                        <i class="glyphicon glyphicon-list"></i>
+                        Öğrenci Listesi
+                    </a>
+                </li>
+                <li>
+                    <a href="/Default/Index">
+                        <i class="glyphicon glyphicon-book"></i>
+                        Dersler
+                    </a>
+                </li>
+                <li>
+                    <a href="/Kulupler/Index">
+                        <i class="glyphicon glyphicon-floppy-saved"></i>
+                        Kulüpler
+                    </a>
+                </li>
+                <li>
+                    <a href="/Notlar/Index">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                        Sınav Notları
+                    </a>
+                </li>                
+                <li>
+                    <a href="/Hakkımda/Index">
+                        <i class="glyphicon glyphicon-phone"></i>
+                        Hakkımda
+                    </a>
+                </li>
+            </ul>            
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/toastr.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
